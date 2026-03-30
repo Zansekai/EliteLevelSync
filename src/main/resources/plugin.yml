@@ -1,0 +1,26 @@
+name: EliteLevelSync
+version: '${project.version}'
+main: fr.nathanmmo.elitelevelsync.EliteLevelSync
+api-version: '1.21'
+description: Synchronise le niveau requis EliteMobs avec mcMMO / ValhallaMMO / MMOCore
+author: NathanMMO
+
+softdepend:
+  - EliteMobs
+  - mcMMO
+  - ValhallaMMO
+  - MMOCore
+
+commands:
+  elsreload:
+    description: Recharge la configuration EliteLevelSync
+    permission: elitelevelsync.reload
+    usage: /elsreload
+
+permissions:
+  elitelevelsync.reload:
+    description: Permet de recharger la config
+    default: op
+  elitelevelsync.bypass:
+    description: Ignore la restriction de niveau
+    default: false
