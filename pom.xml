@@ -28,11 +28,5 @@
         <dependency><groupId>io.lumine</groupId><artifactId>MythicLib-dist</artifactId><version>1.6.2</version><scope>provided</scope></dependency>
         <dependency><groupId>net.Indyuce</groupId><artifactId>MMOCore-API</artifactId><version>1.12.1</version><scope>provided</scope></dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><source>21</source><target>21</target><encoding>UTF-8</encoding></configuration></plugin>
-            <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-shade-plugin</artifactId><version>3.6.0</version><executions><execution><phase>package</phase><goals><goal>shade</goal></goals><configuration><createDependencyReducedPom>false</createDependencyReducedPom></configuration></execution></executions></plugin>
-        </plugins>
-        <resources><resource><directory>src/main/resources</directory><filtering>true</filtering></resource></resources>
-    </build>
+    <build><plugins><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><source>21</source><target>21</target><encoding>UTF-8</encoding></configuration></plugin><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-shade-plugin</artifactId><version>3.6.0</version><executions><execution><phase>package</phase><goals><goal>shade</goal></goals><configuration><createDependencyReducedPom>false</createDependencyReducedPom></configuration></execution></executions></plugin></plugins><resources><resource><directory>src/main/resources</directory><filtering>true</filtering></resource></resources></build>
 </project>
