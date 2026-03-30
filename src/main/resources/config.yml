@@ -1,0 +1,14 @@
+level-source: MMOCOREmcmmo-level-type: POWER
+valhalla-level-type: LEVEL
+message-insufficient-level: "&c✖ &7Niveau insuffisant ! &cNiveau &f{required} &crequis &7(votre niveau &f{source}&7 : &f{current}&7)"
+play-sound: true
+sound: ENTITY_VILLAGER_NO
+sound-volume: 1.0
+sound-pitch: 1.2
+show-title: false
+title: "&cNiveau insuffisant"
+subtitle: "&7Niveau {source} requis : &c{required}"
+title-fade-in: 10
+title-stay: 40
+title-fade-out: 10
+debug: false
