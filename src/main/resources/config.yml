@@ -1,4 +1,6 @@
-level-source: MMOCOREmcmmo-level-type: POWER
+# EliteLevelSync - Config
+level-source: MMOCORE
+mcmmo-level-type: POWER
 valhalla-level-type: LEVEL
 message-insufficient-level: "&c✖ &7Niveau insuffisant ! &cNiveau &f{required} &crequis &7(votre niveau &f{source}&7 : &f{current}&7)"
 play-sound: true
