@@ -1,16 +1,63 @@
-# EliteLevelSync - Config
-level-source: MMOCORE
-mcmmo-level-type: POWER
-valhalla-level-type: LEVEL
-message-insufficient-level: "&c✖ &7Niveau insuffisant ! &cNiveau &f{required} &crequis &7(votre niveau &f{source}&7 : &f{current}&7)"
-play-sound: true
-sound: ENTITY_VILLAGER_NO
-sound-volume: 1.0
-sound-pitch: 1.2
-show-title: false
-title: "&cNiveau insuffisant"
-subtitle: "&7Niveau {source} requis : &c{required}"
-title-fade-in: 10
-title-stay: 40
-title-fade-out: 10
-debug: false
+# EliteLevelSync - Configuration
+# Synchronise les niveaux mcMMO vers les skills EliteMobs
+
+# Mode de synchronisation :
+# "direct"  -> chaque skill mcMMO mappe vers le skill EM correspondant
+#              ex: Swords mcMMO niveau 50 -> Swords EM niveau 50
+# "average" -> la moyenne de tous les skills mcMMO actifs donne le niveau de TOUS les skills EM
+#              ex: moyenne mcMMO 75 -> tous les skills EM a 75
+# "both"    -> mapping direct pour les skills combat, moyenne pour les skills sans equivalent EM
+sync-mode: "direct"
+
+# Facteur d'echelle : niveau_EM = niveau_mcMMO * scale-factor
+# Par defaut 1.0 (egalite parfaite)
+# Si mcMMO monte jusqu'a 1000 et EM jusqu'a 100, mets 0.1
+scale-factor: 1.0
+
+# Niveau maximum qu'EliteLevelSync peut assigner dans EM (securite)
+max-em-level: 100
+
+# Skills mcMMO pris en compte pour le calcul de la moyenne (mode "average" ou "both")
+# Retirer les skills que tu as desactives dans mcMMO
+average-skills:
+  - SWORDS
+  - AXES
+  - ARCHERY
+  - CROSSBOWS
+  - TRIDENTS
+  - UNARMED
+  - ACROBATICS
+
+# Mapping direct : skill mcMMO -> skill EliteMobs
+# Skills EM disponibles : SWORDS, AXES, BOWS, CROSSBOWS, TRIDENTS, MACES, SPEARS, ARMOR
+# Laisser vide (commente) pour ignorer un skill mcMMO
+skill-mapping:
+  SWORDS: SWORDS
+  AXES: AXES
+  ARCHERY: BOWS
+  CROSSBOWS: CROSSBOWS
+  TRIDENTS: TRIDENTS
+  UNARMED: MACES
+  # TAMING: ~
+  # MINING: ~
+  # HERBALISM: ~
+  # WOODCUTTING: ~
+  # FISHING: ~
+  # REPAIR: ~
+  # ALCHEMY: ~
+
+# Synchroniser a la connexion du joueur
+sync-on-join: true
+
+# Synchroniser au level-up mcMMO (recommande)
+sync-on-levelup: true
+
+# Intervalle de synchronisation periodique en secondes (0 = desactive)
+periodic-sync-interval: 300
+
+# Messages (supporte les codes couleur &)
+messages:
+  sync-success: "&a[ELS] Skills synchronises."
+  reload-success: "&a[ELS] Configuration rechargee."
+  no-permission: "&c[ELS] Vous n'avez pas la permission."
+  player-not-found: "&c[ELS] Joueur introuvable."
