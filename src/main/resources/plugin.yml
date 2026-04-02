@@ -1,15 +1,15 @@
 name: EliteLevelSync
-version: '${project.version}'
-main: fr.nathanmmo.elitelevelsync.EliteLevelSync
+version: 1.0.0
+main: fr.zansekai.elitelevelsync.EliteLevelSync
 api-version: '1.21'
-description: Synchronise le niveau requis EliteMobs avec mcMMO / ValhallaMMO / MMOCore
-author: NathanMMO
-softdepend: [EliteMobs, mcMMO, ValhallaMMO, MMACore]
+authors: [Zansekai]
+description: Synchronise les niveaux mcMMO vers les skills EliteMobs
+
+depend: [mcMMO, EliteMobs]
+
 commands:
-  elsreload:
-    description: Recharge la config
-    permission: elitelevelsync.reload
-    usage: /elsreload
-permissions:
-  elitelevelsync.reload: { description: Recharge la config, default: op }
-  elitelevelsync.bypass: { description: Ignore la restriction, default: false }
+  elitelevelsync:
+    description: Commandes EliteLevelSync
+    aliases: [els]
+    usage: /els <reload|sync <joueur>>
+    permission: elitelevelsync.admin
